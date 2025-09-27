@@ -1,0 +1,31 @@
+[project]
+name = "inventory-clean"
+version = "0.1.0"
+description = "DB-agnostic inventory backend with Clean Architecture"
+authors = [
+    "Edwin C cubillos.dev.bk@gmail.com"
+]
+license = "GNU GENERAL PUBLIC LICENSE"
+readme = "README.md"
+packages = [{ include = "inventory", from = "src" }]
+
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi (>=0.117.1,<0.118.0)",
+    "uvicorn (>=0.37.0,<0.38.0)",
+    "sqlalchemy (>=2.0.43,<3.0.0)",
+    "pydantic (>=2.11.9,<3.0.0)",
+    "psycopg[binary] (>=3.2.10,<4.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+pytest-cov = "^7.0.0"
+httpx = "^0.28.1"
+
