@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    env_file:
+      - .env
+    environment:
+      # ensure defaults if not in .env
+      SQLITE_PATH: /data/infrastructure.db
+      JWT_SECRET: ${JWT_SECRET:-change-me}
+      JWT_ALG: ${JWT_ALG:-HS256}
+      JWT_EXPIRES_MIN: ${JWT_EXPIRES_MIN:-60}
+      DEV_USER: ${DEV_USER:-test}
+      DEV_PASS: ${DEV_PASS:-test}
+    volumes:
+      - backend_data:/data
+      - ./src:/app/src:ro
+    ports:
+      - "8000:8000"
+    command: >
+      bash -lc "uvicorn inventory.interfaces.http.api:app --host 0.0.0.0 --port 8000 --reload"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    environment:
+      REACT_APP_API_URL: "http://localhost:8000"
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules     # keep node_modules as a named/anonymous volume
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    command: >
+      sh -c "npm install && npm start"
+
+volumes:
+  backend_data:

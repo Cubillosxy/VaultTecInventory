@@ -1,0 +1,3 @@
+[run]
+omit =
+    src/inventory/infrastructure/db/sqlite_db.py
