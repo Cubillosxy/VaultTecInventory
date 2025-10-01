@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Product:
-    id: int | None
+    id: str | None
     name: str
     description: str
     price: float

@@ -544,6 +544,24 @@ files = [
 windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
+name = "pyjwt"
+version = "2.10.1"
+description = "JSON Web Token implementation in Python"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "PyJWT-2.10.1-py3-none-any.whl", hash = "sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb"},
+    {file = "pyjwt-2.10.1.tar.gz", hash = "sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"},
+]
+
+[package.extras]
+crypto = ["cryptography (>=3.4.0)"]
+dev = ["coverage[toml] (==5.0.4)", "cryptography (>=3.4.0)", "pre-commit", "pytest (>=6.0.0,<7.0.0)", "sphinx", "sphinx-rtd-theme", "zope.interface"]
+docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
+tests = ["coverage[toml] (==5.0.4)", "pytest (>=6.0.0,<7.0.0)"]
+
+[[package]]
 name = "pytest"
 version = "8.4.2"
 description = "pytest: simple powerful testing with Python"
@@ -599,6 +617,18 @@ files = [
 
 [package.extras]
 cli = ["click (>=5.0)"]
+
+[[package]]
+name = "python-multipart"
+version = "0.0.20"
+description = "A streaming multipart parser for Python"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "python_multipart-0.0.20-py3-none-any.whl", hash = "sha256:8a62d3a8335e06589fe01f2a3e178cdcc632f3fbe0d492ad9ee0ec35aab1f104"},
+    {file = "python_multipart-0.0.20.tar.gz", hash = "sha256:8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"},
+]
 
 [[package]]
 name = "sniffio"
@@ -756,6 +786,18 @@ files = [
 typing-extensions = ">=4.12.0"
 
 [[package]]
+name = "ulid-py"
+version = "1.1.0"
+description = "Universally Unique Lexicographically Sortable Identifier"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "ulid-py-1.1.0.tar.gz", hash = "sha256:dc6884be91558df077c3011b9fb0c87d1097cb8fc6534b11f310161afd5738f0"},
+    {file = "ulid_py-1.1.0-py2.py3-none-any.whl", hash = "sha256:b56a0f809ef90d6020b21b89a87a48edc7c03aea80e5ed5174172e82d76e3987"},
+]
+
+[[package]]
 name = "uvicorn"
 version = "0.37.0"
 description = "The lightning-fast ASGI server."
@@ -777,4 +819,4 @@ standard = ["colorama (>=0.4) ; sys_platform == \"win32\"", "httptools (>=0.6.3)
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "2f5066ac298da0003636f6b22307d5927b6ced185f0bb2745710a923cb675f70"
+content-hash = "72389733002df9c5219e3732b828718abb19d74602db9028ba1b8dcab765ba4b"
