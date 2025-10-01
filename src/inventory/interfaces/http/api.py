@@ -2,7 +2,8 @@ import os
 from dataclasses import asdict
 from fastapi import FastAPI, Depends, HTTPException
 from pydantic import BaseModel, Field
-from inventory.infrastructure.db.postgres_raw.repo import PgUoW as UnitOfWork
+# from inventory.infrastructure.db.postgres_raw.repo import PgUoW as UnitOfWork
+from inventory.infrastructure.db.sqlite_raw.repo import SQLiteUoW as UnitOfWork
 from inventory.usecases.product_create import CreateProduct
 from inventory.usecases.product_list import ListProducts
 from inventory.usecases.product_update import UpdateProduct
