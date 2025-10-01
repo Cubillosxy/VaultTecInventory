@@ -1,10 +1,10 @@
 FROM node:20
-
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json ./
-RUN npm install
+# Build-time install (optional speed-up for CI builds)
+# COPY package.json package-lock.json ./
+# RUN npm ci
 
-COPY . .
-
+# We rely on docker-compose to run "npm install" at startup,
+# because the host bind mount hides node_modules from image layers.
 EXPOSE 3000
